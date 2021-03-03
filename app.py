@@ -1,9 +1,10 @@
 from flask import Flask, request, jsonify
-
+from flask_cors import CORS
 from os import getenv
 import digitalocean
 
 app = Flask(__name__)
+CORS(app)
 
 DO_TOKEN = getenv("DO_TOKEN", None)
 DOMAIN = getenv("DOMAIN", None)
